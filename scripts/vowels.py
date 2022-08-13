@@ -1,17 +1,15 @@
 import re 
-import os
+import os 
+from string import * 
 
-#convert the python file into a string 
-text = open("vowel.txt")
-    
-# Write the solution for "Filter Vowels".
-#Count the number of vowels 
+print ("opening file")
 
-#find the vowels by using regex 
-vowels = (a|e|i|o|u)
+pattern = "(a|e|i|o|u|A|E|I|O|U)"
 
-#count the vowels by storing it in an array 
-number_of_vowels = len(re.findall(vowels, text))
-
-#Change the name of the file to vowels-number.txt
-os.rename("vowel.txt", "vowels-"+number_of_vowels"+".txt"
+with open ('vowels.txt','r') as f: 
+  context = f.read()
+  number_of_vowels = len(re.findall(pattern, context))
+  print(number_of_vowels)
+  string = str(number_of_vowels)
+  os.rename("vowels.txt", "vowels-"+string+".txt")
+  
