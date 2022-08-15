@@ -1,15 +1,23 @@
-# Write the solution for "Split the files".
+import re 
+from string import * 
 
-#check the size of the file, if it is >=150bytes
+print("opening file")
+pattern = "\s"
+count = 0
 
-#Check if there is a space in the next one 
+with open ('meta.txt','r') as f:
+  context = f.read()
+  length = len(context)
+  number_of_files = length/200
+  result = re.split(pattern, context, 10)
+  #print(result[0])
 
-#Go to the next space and split the file there 
-
-#if not keep going 
-
-split --lines=30000000 --numeric-suffixes --suffix-length=2 t.txt t
-
-
-
-
+for x in result: 
+  count = count+1
+  string = str(count)
+  f = open("meta-"+string+".txt", "a")
+  result_array = result[count-1]
+  result_string = str(result_array)
+  f.write(result_string)
+  f.close()
+  #print(result)
