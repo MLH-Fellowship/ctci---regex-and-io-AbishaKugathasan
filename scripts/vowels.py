@@ -12,4 +12,3 @@ with open ('vowels.txt','r') as f:
   print(number_of_vowels)
   string = str(number_of_vowels)
   os.rename("vowels.txt", "vowels-"+string+".txt")
-  
